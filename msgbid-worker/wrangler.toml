@@ -14,7 +14,7 @@ class_name = "SchedulerDurableObject"
 [vars]
 ADMIN_TOKEN = "snickers"
 N = "5000" # Number of clients to wait for
-TIMEOUT = "60000" # Timeout in milliseconds
+TIMEOUT = "30000" # Timeout in milliseconds
 ACCUMULATE_BAL = "1"
 START_BAL = "10"
 MAX_BAL = "100"
