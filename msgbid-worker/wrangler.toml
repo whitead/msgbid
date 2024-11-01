@@ -1,0 +1,24 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "msgbid-worker"
+main = "src/index.js"
+compatibility_date = "2024-10-22"
+compatibility_flags = ["nodejs_compat"]
+
+# Define your Durable Object
+[[durable_objects.bindings]]
+name = "MSGBIND_SCHEDULER_DO"
+class_name = "SchedulerDurableObject"
+
+
+# Environment variables
+[vars]
+ADMIN_TOKEN = "snickers"
+N = "5000" # Number of clients to wait for
+TIMEOUT = "60000" # Timeout in milliseconds
+ACCUMULATE_BAL = "1"
+START_BAL = "10"
+MAX_BAL = "100"
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["SchedulerDurableObject"]
